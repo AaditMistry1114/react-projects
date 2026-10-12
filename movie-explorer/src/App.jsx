@@ -9,10 +9,13 @@ import movies from "./data/movies";
 function App() {
   const [searchItem, setSearchTerm] = useState("");
   const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [activeView, setActiveView] = useState("home");
 
   const filteredMovies = movies.filter((elem) =>
     elem.title.toLowerCase().includes(searchItem.toLowerCase())
   );
+
+  const moviesToDisplay = activeView === "home" ? filteredMovies : favoriteMovies;
 
   function handleFavorite(movie) {
     const isFavorite = favoriteMovies.some(
@@ -32,14 +35,14 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar setActiveView={setActiveView} />
 
       <Hero />
 
       <SearchBar onSearch={setSearchTerm} />
 
       <MovieSection
-        movies={filteredMovies}
+        movies={moviesToDisplay}
         onFavorite={handleFavorite}
         favoriteMovies={favoriteMovies}
       />

@@ -1,11 +1,11 @@
 
-function Navbar() {
+function Navbar( { setActiveView } ) {
     return (
         <nav>
             <h2>🎬 Movie Explorer</h2>
             <div className="nav-links" >
-                <a href="#" >Home</a>
-                <a href="#" >Favorites</a>
+                <button onClick={() => setActiveView("home")}>Home</button>
+                <button onClick={() => setActiveView("favorites")}>Favorites</button>
             </div>
         </nav>
     )
