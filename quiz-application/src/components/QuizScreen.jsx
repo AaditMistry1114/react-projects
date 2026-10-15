@@ -24,7 +24,7 @@ export default function QuizScreen() {
                 <button className="answer-option">Tool</button>
                 <button className="answer-option">Application</button>
             </div>
-            <button className='next-button' >Next <FaLongArrowAltRight /> </button>
+            <button className='next-button'>Next <FaLongArrowAltRight /> </button>
         </div>
     </section>
   )

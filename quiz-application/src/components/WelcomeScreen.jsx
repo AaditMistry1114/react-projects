@@ -5,7 +5,7 @@ import { FaReact } from "react-icons/fa";
 
 
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen( { onScreenChange } ) {
   return (
     <section className='welcome-container'>
         <div className="welcome-card">
@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
             <h2>React Quiz</h2>
             <p className='welcome-description' >Test your React knowledge with this interactive quiz.</p>
             <p className='question-count' > <FcTodoList />  5 Questions </p>
-            <button>Start Quiz <FaLongArrowAltRight /> </button>
+            <button onClick={() => onScreenChange("quiz")} >Start Quiz <FaLongArrowAltRight /> </button>
         </div> 
     </section>
   )
