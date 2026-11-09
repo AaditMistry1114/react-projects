@@ -1,0 +1,49 @@
+/* Header containing title and save status */
+.editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+/* Editor heading */
+.editor-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #F4F4F5;
+}
+
+/* Save status */
+.save-status {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+/* When note is saved */
+.save-status.saved {
+    color: #4ADE80;
+}
+
+/* When note is saving */
+.save-status.saving {
+    color: #FBBF24;
+}
+
+.editor-wrapper {
+    position: relative;
+}
+
+.save-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    font-size: 1.5rem;
+}
