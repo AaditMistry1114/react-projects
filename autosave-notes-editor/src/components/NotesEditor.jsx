@@ -18,6 +18,19 @@ export default function NotesEditor() {
 
     }, []);
 
+    // saves data to localstorage
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+          localStorage.setItem("notes", text);
+        }, 1000);
+      
+      return () => {
+        clearTimeout(timer);
+      }
+
+    }, [text]);
+
   return (
     <>
     <textarea value={text}  onChange={(e) => setText(e.currentTarget.value)} className='notes-input' ></textarea>
