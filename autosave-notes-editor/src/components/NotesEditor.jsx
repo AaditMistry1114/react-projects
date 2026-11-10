@@ -28,6 +28,25 @@ export default function NotesEditor() {
     };
   }, [text]);
 
+  // triggers when status is saving.. and user tries to close tab
+  useEffect(() => {
+
+    function handleBeforeUnload(event){
+
+      if(status === "saving"){
+        event.preventDefault();
+        event.returnValue = "";
+      }
+    }
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload",handleBeforeUnload);
+    }
+
+  }, [status]);
+
   return (
     <>
       <div className="editor-header">
